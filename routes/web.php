@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CarController;
+use App\Http\Controllers\CarPartController;
+use App\Http\Controllers\ServiceOrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('/cars', CarController::class)->name('*','cars');
+Route::resource('/carParts', CarPartController::class)->name('*','carParts');
+Route::resource('/serviceOrders', ServiceOrderController::class)->name('*','serviceOrders');
